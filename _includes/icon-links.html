@@ -44,5 +44,10 @@
   <li class="icon-link-item"><a href="{{ site.resume_social_links.resume_website_url }}" class="icon-link" itemprop="url">{% include icons/icon-website.html %}</a></li>
   {% endif %}
 
+  <!-- Xing link -->
+  {% if site.resume_social_links.resume_xing_url %}
+  <li class="icon-link-item"><a href="{{ site.resume_social_links.resume_xing_url }}" class="icon-link" itemprop="sameAs">{% include icons/icon-xing.html %}</a></li>
+  {% endif %}
+
 </ul>
 {% endif %}

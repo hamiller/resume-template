@@ -15,4 +15,22 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="icon" type="image/x-icon" href="/favicon.png" />
+
+  <script type="text/javascript">
+    function replaceLinks() { 
+      var transclude = document.getElementById("transclude");
+
+      //transclude.parent.replaceChild(html, transclude);
+
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("transclude").parentNode.innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", transclude.href, true);
+      xhttp.send();
+    }
+  </script>
 </head>

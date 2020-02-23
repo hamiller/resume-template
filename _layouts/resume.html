@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
+  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}" onload="replaceLinks()">
 
     <div class="wrapper" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="telephone" content="{{ site.resume_contact_telephone }}"/>
@@ -215,6 +215,22 @@
       <!-- end Links -->
       {% endif %}
 
+      {% if site.github_blog %}
+      <!-- begin Links -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Something new?</h2>
+        </header>
+
+        <div class="resume-item">
+          <a id="transclude" href="https://hamiller.github.io/" itemprop="url">Github blog</a>
+        </div>
+
+      </section>
+      <!-- end Links -->
+      {% endif %}
+
       {% if site.resume_print_social_links %}
       <!-- begin Print Social Links -->
       <section class="content-section print-only">
@@ -233,7 +249,6 @@
 
       <footer class="page-footer">
         <p class="footer-line">Made by <a href="http://twitter.com/jglovier">@jglovier</a>. Fork me on <a href="https://github.com/jglovier/resume-template">GitHub</a>.</p>
-        <p class="footer-line">If this is your live resume, you can modify or remove this part. ;-)</p>
       </footer>
 
     </div>
